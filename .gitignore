@@ -27,8 +27,12 @@ build/Release
 node_modules
 
 # Build folders
-/public/build
+public/uploads/
+/public/templates/templates.js
+/config/config.json
+/config/db.json
+/public/css/willbatross.css
+/public/css/maps/willbatross.css.map
 /public/build/willbatross.js
-/public/build/willbatross.min.js
-/public/css
+/public/build/willbatross.js.map
 
