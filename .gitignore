@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 =======
 # Logs
 logs
@@ -26,3 +25,10 @@ build/Release
 
 # Dependency directory
 node_modules
+
+# Build folders
+/public/build
+/public/build/willbatross.js
+/public/build/willbatross.min.js
+/public/css
+
