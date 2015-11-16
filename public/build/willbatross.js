@@ -47,12 +47,14 @@
 	/* WEBPACK VAR INJECTION */(function($) {var Willbatross = __webpack_require__(5);
 	var Router = __webpack_require__(7);
 	var Navigation = __webpack_require__(8);
+	var PlayerController = __webpack_require__(170);
 	
 	Willbatross.router = new Router();
 	
 	$(function(){
 	    
 	    new Navigation();
+	    new PlayerController();
 	    
 	})
 	
@@ -20431,6 +20433,41 @@
 	});
 	
 	module.exports = Navigation;
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Backbone, _, $) {
+	var playerController = Backbone.View.extend({
+	    
+	    initialize: function() {
+	        this.preRender();
+	        this.render();
+	    },
+	    
+	    preRender: function() {
+	        
+	    },
+	    
+	    render: function() {
+	        
+	        _.defer(_.bind(this.postRender, this));
+	        return this;
+	    }, 
+	    
+	    postRender: function() {
+	        console.log("We are getting here")
+	        
+	        $.get("/api/soundcloud/init/", function(data) {
+	            console.log(data);  
+	        });
+	    }
+	    
+	});
+	
+	module.exports = playerController;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(2), __webpack_require__(1)))
 
 /***/ }
 /******/ ]);

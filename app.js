@@ -72,9 +72,7 @@ app.get("/", function(req, res){
 });
 
 //Routes
-var index = require('./lib/routes/index');
-
-app.use(index);
+require('./lib/routes/soundcloud')(app);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
