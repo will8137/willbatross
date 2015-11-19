@@ -6,8 +6,11 @@ var Dashboard = require("modules/dashboard/js/dashboardController");
 Willbatross.router = new Router();
 
 $(function(){
-    
-    new Navigation();
-    new DasbBoard();
+    Willbatross.hub.trigger("Willbatross:ready");
+});
 
-})
+Willbatross.hub.on("Willbatross:ready", function(){
+    new Navigation();
+    new Dashboard();
+});
+    

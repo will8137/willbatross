@@ -15,6 +15,9 @@ var Navigation = React.createClass({
         return (
         <div className="navigation">
             <div className="navigation-inner">
+                <div className="navigation-logo">
+                    Willbatross
+                </div>
                 <div className="navigation-scroll">
                 
                     {profile}

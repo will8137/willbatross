@@ -5,11 +5,9 @@ var THREE = require('core/js/libraries/three.min.js');
 var Dashboard = React.createClass({
     
     render: function() {
-        console.log(THREE);
         
         return (
-            <div>
-            </div>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rYnhrIDMXRU" frameBorder="0" autoPlay="true"></iframe>
         )
     }
     
