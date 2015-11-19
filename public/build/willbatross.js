@@ -470,7 +470,7 @@
 	    },
 	    
 	    render: function() {
-	        this.$el.appendTo("#wrapper");
+	        this.$el.appendTo("body");
 	        _.defer(_.bind(this.postRender, this));
 	        return this;
 	    },
@@ -20409,86 +20409,17 @@
 	            React.createElement("div", {className: "navigation-inner"}, 
 	                React.createElement("div", {className: "navigation-scroll"}, 
 	                
-	                    React.createElement("div", {className: "navigation-profile"}, 
-	                        React.createElement("div", {className: "navigation-profile-inner"}, 
-	            
-	                            React.createElement("div", {className: "navigation-profile-edit"}, 
-	                                React.createElement("a", {href: "#/users/edit"}, React.createElement("i", {className: "icon icon-pencil4"}))
-	                            ), 
-	            
-	                            React.createElement("div", {className: "navigation-profile-avatar"}, 
-	                                React.createElement("img", {src: "http://placehold.it/350x150"})
-	                            ), 
-	            
-	                            React.createElement("div", {className: "navigation-profile-user"}, 
-	                                "Will Lytton"
-	                            ), 
-	            
-	                            React.createElement("div", {className: "list-item-detail"}, 
-	                                React.createElement("i", {className: "icon icon-users2"}), React.createElement("span", null)
-	                            )
-	            
-	                        )
-	                    ), 
+	                    profile, 
+	                    
 	                    React.createElement("div", {className: "navigation-item navigation-dashboard"}, 
 	                        React.createElement("a", {href: "#/dashboard", className: "selected navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-speed-fast"}))
+	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-speed-fast"}), "Dashboard")
 	                        )
 	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-users"}, 
-	                        React.createElement("a", {href: "#/users", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-woman"}))
-	                        )
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-groups"}, 
-	                        React.createElement("a", {href: "#/groups", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-users2"}))
-	                        )
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-groups"}, 
-	                        React.createElement("a", {href: "#/groups", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-users2"}))
-	                        )
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-subjects"}, 
-	                        React.createElement("a", {href: "#/subjects", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-contacts"}))
-	                        )
-	            
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-subjects"}, 
-	                        React.createElement("a", {href: "#/subjects", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-contacts"}))
-	                        )
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-courses"}, 
-	                        React.createElement("a", {href: "#/courses", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-book"}))
-	                        )
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-courses"}, 
-	                        React.createElement("a", {href: "#/courses", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-book"}))
-	                        )
-	                    ), 
-	            
-	                    React.createElement("div", {className: "navigation-item navigation-achievements"}, 
-	                        React.createElement("a", {href: "#/achievements", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-trophy2"}))
-	                        ), 
-	                        React.createElement("a", {href: "#/achievements/add", className: "navigation-item-add"}, React.createElement("i", {className: "icon icon-plus-circle"}))
-	                    ), 
-	            
+	
 	                    React.createElement("div", {className: "navigation-item navigation-settings"}, 
 	                        React.createElement("a", {href: "#/logout", className: "navigation-item-title"}, 
-	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-power-switch"}))
+	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-power-switch"}), "Settings")
 	                        )
 	                    )
 	            
@@ -20521,7 +20452,26 @@
 	    
 	    render: function() {
 	        return (
-	            React.createElement("div", null
+	            React.createElement("div", {className: "navigation-profile"}, 
+	                React.createElement("div", {className: "navigation-profile-inner"}, 
+	    
+	                    React.createElement("div", {className: "navigation-profile-edit"}, 
+	                        React.createElement("a", {href: "#/users/edit"}, React.createElement("i", {className: "icon icon-pencil4"}))
+	                    ), 
+	    
+	                    React.createElement("div", {className: "navigation-profile-avatar"}, 
+	                        React.createElement("img", {src: "http://www.finearttips.com/wp-content/uploads/2010/05/avatar.jpg", width: "100%", height: "100%"})
+	                    ), 
+	    
+	                    React.createElement("div", {className: "navigation-profile-user"}, 
+	                        "Will Lytton"
+	                    ), 
+	    
+	                    React.createElement("div", {className: "list-item-detail"}, 
+	                        React.createElement("i", {className: "icon icon-users2"}), React.createElement("span", null)
+	                    )
+	    
+	                )
 	            )
 	        )
 	    }

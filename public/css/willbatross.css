@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(https://fonts.googleapis.com/css?family=Archivo+Narrow);
 html,
 body,
 div,
@@ -126,9 +127,85 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-#wrapper {
-  padding: 10px;
+html,
+body {
   height: 100%;
+  background-color: #F7F7FC!important;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+#wrapper {
+  margin-left: 220px;
+  padding-top: 54px;
+  min-width: 320px;
+}
+@media all and (max-width: 760px) {
+  #wrapper {
+    margin-left: 54px;
+  }
+}
+@media all and (max-width: 512px) {
+  #wrapper {
+    margin-left: 0;
+  }
+}
+.sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  top: 30px;
+  right: 0px;
+  background-color: #ccd1d9;
+  color: #fff;
+  border-left: 1px solid #aab2bd;
+}
+.sidebar-inner {
+  padding: 40px 20px;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.cols {
+  zoom: 1;
+}
+.cols:before,
+.cols:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.cols:after {
+  clear: both;
+}
+.banner {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.banner-title {
+  width: 70%;
+}
+.banner-body {
+  width: 70%;
+  margin-top: 2px;
+}
+.content-padding {
+  padding: 30px;
+}
+@media all and (max-width: 512px) {
+  .content-padding {
+    padding: 20px;
+  }
 }
 .navigation {
   position: fixed;
