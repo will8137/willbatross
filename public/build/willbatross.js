@@ -470,7 +470,7 @@
 	    },
 	    
 	    render: function() {
-	        this.$el.appendTo("#wrapper");
+	        this.$el.appendTo("body");
 	        _.defer(_.bind(this.postRender, this));
 	        return this;
 	    },
@@ -20392,8 +20392,55 @@
 
 	/** @jsx React.DOM */var React = __webpack_require__(11);
 	var ReactDOM = __webpack_require__(168);
+	var NavigationProfile = __webpack_require__(170);
 	
 	var Navigation = React.createClass({displayName: "Navigation",
+	    
+	    getUserProfile: function() {
+	        return React.createElement(NavigationProfile, {controller: this});
+	    },
+	    
+	    render: function() {
+	    
+	        var profile = this.getUserProfile();
+	        
+	        return (
+	        React.createElement("div", {className: "navigation"}, 
+	            React.createElement("div", {className: "navigation-inner"}, 
+	                React.createElement("div", {className: "navigation-scroll"}, 
+	                
+	                    profile, 
+	                    
+	                    React.createElement("div", {className: "navigation-item navigation-dashboard"}, 
+	                        React.createElement("a", {href: "#/dashboard", className: "selected navigation-item-title"}, 
+	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-speed-fast"}), "Dashboard")
+	                        )
+	                    ), 
+	
+	                    React.createElement("div", {className: "navigation-item navigation-settings"}, 
+	                        React.createElement("a", {href: "#/logout", className: "navigation-item-title"}, 
+	                            React.createElement("span", null, React.createElement("i", {className: "icon icon-power-switch"}), "Settings")
+	                        )
+	                    )
+	            
+	                )
+	            )
+	        )
+	        )
+	    }
+	    
+	});
+	
+	module.exports = Navigation;
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(11);
+	var ReactDOM = __webpack_require__(168);
+	
+	var NavigationProfile = React.createClass({displayName: "NavigationProfile",
 	    
 	    userNameClicked: function() {
 	        console.log("This is firing");
@@ -20405,32 +20452,33 @@
 	    
 	    render: function() {
 	        return (
-	            React.createElement("div", {className: "navigation-inner"}, 
-	                
-	                React.createElement("div", {className: "navigation-user"}, 
-	                    React.createElement("div", {className: "navigation-profile"}, 
-	                        
-	                        React.createElement("div", {className: "navigation-profile-avatar"}, 
-	                            React.createElement("img", {src: "#", alt: ""})
-	                        ), 
-	                        
-	                        React.createElement("a", {className: "navigation-profile-name", href: "#", onClick: this.userNameClicked}, 
-	                            React.createElement("h2", null, "Will Lytton")
-	                        ), 
-	                        
-	                        React.createElement("a", {className: "navigation-profile-edit", href: "#", onClick: this.userProfileClicked}, 
-	                            "Edit"
-	                        )
+	            React.createElement("div", {className: "navigation-profile"}, 
+	                React.createElement("div", {className: "navigation-profile-inner"}, 
+	    
+	                    React.createElement("div", {className: "navigation-profile-edit"}, 
+	                        React.createElement("a", {href: "#/users/edit"}, React.createElement("i", {className: "icon icon-pencil4"}))
+	                    ), 
+	    
+	                    React.createElement("div", {className: "navigation-profile-avatar"}, 
+	                        React.createElement("img", {src: "http://www.finearttips.com/wp-content/uploads/2010/05/avatar.jpg", width: "100%", height: "100%"})
+	                    ), 
+	    
+	                    React.createElement("div", {className: "navigation-profile-user"}, 
+	                        "Will Lytton"
+	                    ), 
+	    
+	                    React.createElement("div", {className: "list-item-detail"}, 
+	                        React.createElement("i", {className: "icon icon-users2"}), React.createElement("span", null)
 	                    )
+	    
 	                )
-	                
 	            )
 	        )
 	    }
 	    
 	});
 	
-	module.exports = Navigation;
+	module.exports = NavigationProfile;
 
 /***/ }
 /******/ ]);

@@ -18,7 +18,7 @@ var sideNavControllerView = Backbone.View.extend({
     },
     
     render: function() {
-        this.$el.appendTo("#wrapper");
+        this.$el.appendTo("body");
         _.defer(_.bind(this.postRender, this));
         return this;
     },
