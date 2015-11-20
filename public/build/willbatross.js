@@ -48,6 +48,7 @@
 	var Router = __webpack_require__(7);
 	var Navigation = __webpack_require__(8);
 	var Dashboard = __webpack_require__(171);
+	var Player = __webpack_require__(174);
 	
 	Willbatross.router = new Router();
 	
@@ -58,6 +59,7 @@
 	Willbatross.hub.on("Willbatross:ready", function(){
 	    new Navigation();
 	    new Dashboard();
+	    new Player();
 	});
 	    
 	
@@ -21424,6 +21426,68 @@
 	THREE.MorphBlendMesh.prototype.update=function(a){for(var b=0,c=this.animationsList.length;b<c;b++){var d=this.animationsList[b];if(d.active){var e=d.duration/d.length;d.time+=d.direction*a;if(d.mirroredLoop){if(d.time>d.duration||0>d.time)d.direction*=-1,d.time>d.duration&&(d.time=d.duration,d.directionBackwards=!0),0>d.time&&(d.time=0,d.directionBackwards=!1)}else d.time%=d.duration,0>d.time&&(d.time+=d.duration);var g=d.start+THREE.Math.clamp(Math.floor(d.time/e),0,d.length-1),f=d.weight;g!==d.currentFrame&&
 	(this.morphTargetInfluences[d.lastFrame]=0,this.morphTargetInfluences[d.currentFrame]=1*f,this.morphTargetInfluences[g]=0,d.lastFrame=d.currentFrame,d.currentFrame=g);e=d.time%e/e;d.directionBackwards&&(e=1-e);d.currentFrame!==d.lastFrame?(this.morphTargetInfluences[d.currentFrame]=e*f,this.morphTargetInfluences[d.lastFrame]=(1-e)*f):this.morphTargetInfluences[d.currentFrame]=f}}};
 
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(_) {var Backbone = __webpack_require__(6);
+	var Hub = __webpack_require__(9);
+	var React = __webpack_require__(11);
+	var ReactDOM = __webpack_require__(168);
+	var Player = __webpack_require__(175);
+	
+	var PlayerController = Backbone.View.extend({
+	    
+	    className: "player",
+	    
+	    initialize: function() {
+	        this.preRender();
+	        this.render();
+	    },
+	    
+	    preRender: function() {
+	        
+	    },
+	    
+	    render: function() {
+	        this.$el.appendTo("body");
+	        _.defer(_.bind(this.postRender, this));
+	        return this;
+	    },
+	    
+	    postRender: function() {
+	        ReactDOM.render(React.createElement(Player, {
+	            controller: this
+	        }), this.$el[0]);
+	    }
+	    
+	});
+	
+	module.exports = PlayerController;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(11);
+	var ReactDOM = __webpack_require__(168);
+	
+	var Player = React.createClass({displayName: "Player",
+	    
+	    render: function() {
+	    
+	        return (
+	            React.createElement("div", {className: "player-inner"}
+	                
+	            )
+	        )
+	    }
+	    
+	});
+	
+	module.exports = Player;
 
 /***/ }
 /******/ ]);
