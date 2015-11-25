@@ -13,30 +13,30 @@ var Navigation = React.createClass({
         var profile = this.getUserProfile();
         
         return (
-        <div className="navigation">
-            <div className="navigation-inner">
-                <div className="navigation-logo">
-                    Willbatross
-                </div>
-                <div className="navigation-scroll">
-                
-                    {profile}
+            <div className="navigation">
+                <div className="navigation-inner">
+                    <div className="navigation-logo">
+                        Willbatross
+                    </div>
+                    <div className="navigation-scroll">
                     
-                    <div className="navigation-item navigation-dashboard">
-                        <a href="#/dashboard" className="selected navigation-item-title">
-                            <span><i className="icon icon-speed-fast"></i>Dashboard</span>
-                        </a>
+                        {profile}
+                        
+                        <div className="navigation-item navigation-dashboard">
+                            <a href="#/dashboard" className="selected navigation-item-title">
+                                <span><i className="icon icon-speed-fast"></i>Dashboard</span>
+                            </a>
+                        </div>
+    
+                        <div className="navigation-item navigation-settings">
+                            <a href="#/logout" className="navigation-item-title">
+                                <span><i className="icon icon-power-switch"></i>Settings</span>
+                            </a>
+                        </div>
+                
                     </div>
-
-                    <div className="navigation-item navigation-settings">
-                        <a href="#/logout" className="navigation-item-title">
-                            <span><i className="icon icon-power-switch"></i>Settings</span>
-                        </a>
-                    </div>
-            
                 </div>
             </div>
-        </div>
         )
     }
     

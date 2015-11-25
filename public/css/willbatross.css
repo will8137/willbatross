@@ -3169,6 +3169,11 @@ you can use the generic selector below, but it's slower:
 .icon-ellipsis:before {
   content: "\e9e9";
 }
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -3438,9 +3443,10 @@ body {
   text-align: center;
 }
 .dashboard {
-  box-sizing: border-box;
   height: 100%;
-  padding-bottom: 50px;
+}
+.dashboard-inner {
+  position: relative;
 }
 .player {
   position: fixed;
@@ -3449,7 +3455,36 @@ body {
   bottom: 0px;
   left: 0px;
   z-index: 7;
+  color: #8b95a5;
   background-color: #434a54;
+}
+.player .player-back {
+  display: inline-block;
+  width: 100px;
+}
+.player .player-music-toggle {
+  display: inline-block;
+  width: 100px;
+}
+.player .player-next {
+  display: inline-block;
+  width: 100px;
+}
+.player .player-seek {
+  display: inline-block;
+  width: 100px;
+}
+.player .player-queue {
+  display: inline-block;
+  width: 100px;
+}
+.player .player-volume {
+  display: inline-block;
+  width: 100px;
+}
+.player .player-content-type {
+  display: inline-block;
+  width: 100px;
 }
 
 /*# sourceMappingURL=maps/willbatross.css.map */

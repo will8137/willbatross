@@ -7,12 +7,12 @@ var Player = require("modules/player/js/playerController");
 Willbatross.router = new Router();
 
 $(function(){
-    Willbatross.hub.trigger("Willbatross:ready");
+    Backbone.history.start();
+    Willbatross.hub.trigger("DOM:Loaded");
 });
 
-Willbatross.hub.on("Willbatross:ready", function(){
+Willbatross.hub.on('router:dashboard', function(route1, route2, route3) {
     new Navigation();
     new Dashboard();
     new Player();
 });
-    

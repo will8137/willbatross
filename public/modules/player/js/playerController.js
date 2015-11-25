@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var Hub = require('core/js/hub');
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Willbatross = require('willbatross');
 var Player = require('../components/player.jsx');
 
 var PlayerController = Backbone.View.extend({
@@ -9,6 +10,7 @@ var PlayerController = Backbone.View.extend({
     className: "player",
     
     initialize: function() {
+        this.listenTo(Willbatross.hub, 'remove:views', this.remove);
         this.preRender();
         this.render();
     },

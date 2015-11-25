@@ -8,13 +8,31 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var passport = require('passport');
+var expressSession = require('express-session');
 //Config
 var db = require('./config/db.json');
 var config = require('./config/config.json');
 
 //DB connection
 mongoose.connect(db.url)
+
+//Create app
+var app = express();
+
+//Create mongo session storage
+console.log("before")
+var MongoStore = require('connect-mongo')(expressSession);
+console.log("MongoStore")
+var sessionStore = new MongoStore({ mongoose_connection: mongoose.connections[0] });
+// Configuring Passport
+app.use(expressSession({
+    secret: 'willIsGreat',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Load models
 var models_dir = __dirname + '/app/models';
@@ -25,14 +43,10 @@ fs.readdirSync(models_dir).forEach(function (file) {
 
 //Global path
 global.root = path.resolve(__dirname);
-
-//Create app
-var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, '/app/views'));
 app.set('view engine', 'jade');
-app.set('port', config.serverPort || 8153);
+app.set('port', config.serverPort || 8137);
 app.use(function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');

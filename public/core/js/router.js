@@ -1,4 +1,5 @@
 var Backbone = require('backbone');
+var Willbatross = require('willbatross');
 
 var Router = Backbone.Router.extend({
 
@@ -14,11 +15,11 @@ var Router = Backbone.Router.extend({
 
     handleIndex: function() {
         this.removeViews();
-        if (this.userIsAuthenticated()) {
-            Backbone.history.navigate('#/dashboard', {trigger: true});
-        } else {
-            Backbone.history.navigate('#/login', {trigger: true});
-        }
+        //if (this.userIsAuthenticated()) {
+        Backbone.history.navigate('#/dashboard', {trigger: true});
+        //} else {
+            //Backbone.history.navigate('#/login', {trigger: true});
+        //}
         $(window).scrollTop(0);
     },
 
@@ -27,7 +28,7 @@ var Router = Backbone.Router.extend({
         this.removeViews();
         // Check if user is authenticated before routing
         // This will route to index if not authenticated
-        if (this.userIsAuthenticated()) {
+        //if (this.userIsAuthenticated()) {
             // Set location on Willbatross
             _.each(arguments, function(argumentValue, argumentKey) {
                 Willbatross.location[argumentKey] = argumentValue;
@@ -37,9 +38,9 @@ var Router = Backbone.Router.extend({
             $('body').removeClass().addClass(module);
             // Trigger router event
             Willbatross.hub.trigger('router:' + module, route1, route2, route3, route4);
-        } else {
-            Willbatross.hub.trigger('router:login');
-        }
+        //} else {
+        //    Willbatross.hub.trigger('router:login');
+        //}
         $(window).scrollTop(0);
     },
 

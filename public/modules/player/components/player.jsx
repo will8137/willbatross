@@ -7,7 +7,13 @@ var Player = React.createClass({
     
         return (
             <div className="player-inner">
-                
+                <div className="player-back">Back</div>
+                <div className="player-music-toggle">Play</div>
+                <div className="player-next">Next</div>
+                <div className="player-seek">Seek</div>
+                <div className="player-queue">Queue</div>
+                <div className="player-volume">Volume</div>
+                <div className="player-content-type">Content</div>
             </div>
         )
     }
